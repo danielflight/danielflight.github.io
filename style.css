@@ -1,0 +1,10 @@
+.contact a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.contact a:hover {
+  color: #0077b5; 
+}

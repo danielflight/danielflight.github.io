@@ -6,28 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel Flight | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Daniel Flight</h1>
+      <button id="theme-toggle">Toggle Theme</button>
       <p>Quantum Researcher</p>
       <nav>
-        <a href="#projects">Projects</a>
         <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#cv">CV</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
+
+
+  <section id="about" class="container">
+    <h2>About Me</h2>
+    <p>I’m a physicist focused on photonic quantum architectures. </p>
+      <!-- Currently exploring ML engineering roles while contributing to open-source quantum simulation frameworks.</p> -->
+  </section>
+
+
+
   <section id="projects" class="container">
     <h2>Projects</h2>
     <div class="grid">
       <div class="card">
-        <h3>BloomCircuit</h3>
-        <p>Custom Gaussian and Fock-state photonic circuit simulator with post-selection support.</p>
+        <h3>Project Name</h3>
+        <p>description</p>
         <a href="https://github.com/flighty01" target="_blank">View on GitHub</a>
+        <!-- <a href="https://yourdomain.io/photonic-viz">Live Demo</a> -->
       </div>
       <!-- <div class="card">
         <h3>MrMustard Contributions</h3>
@@ -38,23 +51,79 @@
     </div>
   </section>
 
-  <section id="about" class="container">
-    <h2>About Me</h2>
-    <p>I’m a physicist focused on photonic quantum architectures. </p>
-      <!-- Currently exploring ML engineering roles while contributing to open-source quantum simulation frameworks.</p> -->
-  </section>
 
-  <section id="contact" class="container">
-    <h2>Contact</h2>
-    <p>Email: danielflight07@email.com</p>
-    <p>GitHub: <a href="https://github.com/flighty01">@flighty01</a></p>
-    <!-- Optionally add a contact form later -->
-  </section>
+
+<section id="cv" class="container">
+  <h2>Curriculum Vitae</h2>
+  <button id="toggle-cv-btn">Show CV</button>
+  
+  <div id="cv-container" style="display: none; margin-top: 1rem;">
+    <iframe src="files/cv-template.png" width="75%" height="500px"></iframe>
+  </div>
+</section>
+
+
+
+<section id="contact" class="container">
+  <h2>Contact</h2>
+
+    <!-- <div class="header-icons" >
+      <a href="mailto:helloworlds@dualityqp.com?subject=Hello%20Worlds!" target="_blank" class="icon-link" rel="noopener noreferrer" title="Say Hello!">
+      <i class="fas fa-envelope"></i></a>
+    </div> -->
+    <a href="mailto:danielflight07@gmail.com" target="_blank" rel="noopener noreferrer">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/daniel-flight-0691ab250" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/flighty01" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-github"></i>
+    </a>
+</section>
+
+
+
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Daniel Flight. Built with 💻 and coffee.</p>
+      <p>&copy; 2025 Daniel Flight.</p>
     </div>
   </footer>
+
+
+<script>
+    // Toggle dark/light mode
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+
+    // Simple fade-in animation (Framer Motion-style with vanilla JS)
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('section').forEach((sec, i) => {
+        sec.style.opacity = 0;
+        sec.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          sec.style.transition = 'all 0.5s ease';
+          sec.style.opacity = 1;
+          sec.style.transform = 'translateY(0)';
+        }, 300 * i);
+      });
+    });
+
+    const btn = document.getElementById('toggle-cv-btn');
+    const cvContainer = document.getElementById('cv-container');
+
+    btn.addEventListener('click', () => {
+      if (cvContainer.style.display === 'none') {
+        cvContainer.style.display = 'block';
+        btn.textContent = 'Hide CV';
+      } else {
+        cvContainer.style.display = 'none';
+        btn.textContent = 'Show CV';
+      }
+    });
+</script>
+
 </body>
 </html>
