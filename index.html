@@ -8,17 +8,20 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
   <header>
     <div class="container">
       <h1>Daniel Flight</h1>
-      <button id="theme-toggle">Toggle Theme</button>
+      <!-- <button id="theme-toggle">Toggle Theme</button> -->
       <p>Quantum Researcher</p>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#cv">CV</a>
+        <a href="#recommendations">Recommendations</a>
         <a href="#contact">Contact</a>
+        <a href="files/cv-template.png" target="_blank">CV</a>
+
       </nav>
     </div>
   </header>
@@ -27,19 +30,39 @@
 
   <section id="about" class="container">
     <h2>About Me</h2>
-    <p>I’m a physicist focused on photonic quantum architectures. </p>
+    <p>I'm a physicist with a strong foundation in both theoretical and applied 
+      science. I hold a BSc in Physics from the University of Bristol and an MSc 
+      in Mathematical and Theoretical Physics from the University of Oxford. 
+      My current work focuses on quantum photonic architectures, where I primarily
+      simulate new approaches to quantum information processing using light.</p>
+
+    <p>Alongside my research, I’m actively expanding my skill set in software 
+      engineering and machine learning, with a particular interest in 
+      applications at the intersection of quantum technologies and intelligent 
+      systems. I'm passionate about building tools that bridge theory and 
+      practice — from simulating quantum systems to developing scalable ML 
+      pipelines.</p>
+
+    <p>You can find more details in <a href="files/cv-template.png" target="_blank">my CV</a>.</p>
       <!-- Currently exploring ML engineering roles while contributing to open-source quantum simulation frameworks.</p> -->
   </section>
 
 
 
   <section id="projects" class="container">
-    <h2>Projects</h2>
+    <h2>Open Source Projects</h2>
     <div class="grid">
       <div class="card">
-        <h3>Project Name</h3>
+        <h3>Project 1 Name</h3>
         <p>description</p>
-        <a href="https://github.com/flighty01" target="_blank">View on GitHub</a>
+        <p><a href="https://github.com/flighty01" target="_blank">View on GitHub</a></p>
+        <p><a href="https://github.com/flighty01" target="_blank">View the Docs</a></p>
+        <!-- <a href="https://yourdomain.io/photonic-viz">Live Demo</a> -->
+      </div>
+      <div class="card">
+        <h3>Project 2 Name</h3>
+        <p>description</p>
+        <p><a href="https://github.com/flighty01" target="_blank">View on GitHub</a></p>
         <!-- <a href="https://yourdomain.io/photonic-viz">Live Demo</a> -->
       </div>
       <!-- <div class="card">
@@ -53,14 +76,36 @@
 
 
 
-<section id="cv" class="container">
+
+
+
+  <section id="recommendations" class="container">
+    <h2>Some ML/SWE Resources I've Found Useful </h2>
+    <div class="grid">
+      <div class="card">
+        <h3>resource 1</h3>
+        <p>description</p>
+        <p><a href="https://github.com/flighty01" target="_blank">View</a></p>
+      </div>
+      <!-- <div class="card">
+        <h3>MrMustard Contributions</h3>
+        <p>Extensions for multi-mode post-selection and photonic measurement pipelines.</p>
+        <a href="https://github.com/XanaduAI/MrMustard" target="_blank">View on GitHub</a>
+      </div> -->
+      <!-- Add more projects as needed -->
+    </div>
+  </section>
+
+
+
+<!-- <section id="cv" class="container">
   <h2>Curriculum Vitae</h2>
   <button id="toggle-cv-btn">Show CV</button>
   
   <div id="cv-container" style="display: none; margin-top: 1rem;">
     <iframe src="files/cv-template.png" width="75%" height="500px"></iframe>
   </div>
-</section>
+</section> -->
 
 
 
@@ -92,38 +137,38 @@
   </footer>
 
 
-<script>
-    // Toggle dark/light mode
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
+  <script>
+      const btn = document.getElementById('toggle-cv-btn');
+      const cvContainer = document.getElementById('cv-container');
 
-    // Simple fade-in animation (Framer Motion-style with vanilla JS)
-    window.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('section').forEach((sec, i) => {
-        sec.style.opacity = 0;
-        sec.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          sec.style.transition = 'all 0.5s ease';
-          sec.style.opacity = 1;
-          sec.style.transform = 'translateY(0)';
-        }, 300 * i);
+      btn.addEventListener('click', () => {
+        if (cvContainer.style.display === 'none') {
+          cvContainer.style.display = 'block';
+          btn.textContent = 'Hide CV';
+        } else {
+          cvContainer.style.display = 'none';
+          btn.textContent = 'Show CV';
+        }
       });
-    });
 
-    const btn = document.getElementById('toggle-cv-btn');
-    const cvContainer = document.getElementById('cv-container');
+      // Toggle dark/light mode
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+      });
 
-    btn.addEventListener('click', () => {
-      if (cvContainer.style.display === 'none') {
-        cvContainer.style.display = 'block';
-        btn.textContent = 'Hide CV';
-      } else {
-        cvContainer.style.display = 'none';
-        btn.textContent = 'Show CV';
-      }
-    });
-</script>
+      // Simple fade-in animation (Framer Motion-style with vanilla JS)
+      window.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('section').forEach((sec, i) => {
+          sec.style.opacity = 0;
+          sec.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            sec.style.transition = 'all 0.5s ease';
+            sec.style.opacity = 1;
+            sec.style.transform = 'translateY(0)';
+          }, 300 * i);
+        });
+      });
+  </script>
 
 </body>
 </html>
