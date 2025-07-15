@@ -246,11 +246,26 @@ footer .container p {
 
 
 
+@media screen and (max-width: 1100px) {
+  header {
+    margin-top: -4%;
+  }
+}
+
 @media screen and (max-width: 769px) {
   .wrapper {
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
+  header {
+    margin-top: -7vw;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  header {
+    margin-top: -10vw;
+  }
+}
 
