@@ -9,12 +9,16 @@ a {
 body {
   background: linear-gradient(145deg, #e0e0e0, #ffffff);
   background: rgba(255, 255, 255, 0.3);
-  margin-left: 20%;
-  margin-right: 20%;
+  /* margin-left: 25%;
+  margin-right: 25%; */
   margin-top: 2rem;
   overflow-x: hidden;
 
   /* font-family: 'Barlow', monospace; */
+}
+
+.wrapper {
+  margin: 0px 25%;
 }
 
 section {
@@ -145,7 +149,31 @@ header {
   padding: 2rem 1rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-left: -5%;
+  margin-right: -5%;
+  margin-top: -3%;
 }
+
+
+header {
+  background-image: url('/files/wave.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  /* height: 15vw; */
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  z-index: -1;
+}
+
+
 
 .header-container {
   max-width: 900px;
@@ -219,7 +247,7 @@ footer .container p {
 
 
 @media screen and (max-width: 769px) {
-  body {
+  .wrapper {
     margin-left: 2rem;
     margin-right: 2rem;
   }
