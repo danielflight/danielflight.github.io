@@ -269,3 +269,20 @@ footer .container p {
   }
 }
 
+@media screen and (max-width: 400px) {
+  nav {
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+  }
+
+  .wrapper {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .see-more-button {
+    width: 110px;
+  }
+}
+
