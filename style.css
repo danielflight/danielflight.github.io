@@ -1,5 +1,6 @@
 #html {
     background-color: rgb(0, 0, 0);
+    overflow-x: hidden !important;
 }
 
 a {
@@ -7,27 +8,25 @@ a {
 }
 
 body {
-  background: linear-gradient(145deg, #e0e0e0, #ffffff);
-  background: rgba(255, 255, 255, 0.3);
-  /* margin-left: 25%;
-  margin-right: 25%; */
+  background: linear-gradient(145deg, #e0e0e0, rgba(255, 255, 255, 0.56));
+  /* background-color: rgba(255, 255, 255, 0.3); */
+  margin-left: 0rem;
+  margin-right: 0rem;
   margin-top: 2rem;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  /* background-color:#000000; */
 
   /* font-family: 'Barlow', monospace; */
 }
 
 .wrapper {
-  margin: 0px 25%;
+  margin: 0px 15%;
 }
 
 section {
   padding-top: 2rem;
 }
 
-body p {
-  text-align: justify;
-}
 
 .fade-in-section {
   opacity: 0;
@@ -43,16 +42,47 @@ body p {
 
 .card {
   /* background: rgba(255, 255, 255, 0.3); */
-  background: white;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
   backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  border: 1px solid black;
-  box-shadow: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.1);
-  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+  padding-top: 0.25rem;
+  transition: transform 0.2s ease;
+  justify-content: space-between;
+  /* align-content: start; */
 }
 
+.card h3 a {
+      font-weight: 100;
+      text-decoration: none;
+      color: #0366d6;
+}
+
+.card p {
+      font-weight: 100;
+      color: #3c3c3c;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+}
+
+.card h3:hover a {
+      font-weight: 100;
+      text-decoration: underline;
+      color: #0055b6;
+}
+
+.card h3 a b {
+      font-weight:900;
+}
+
+
 .card.fade-in-section.visible:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
+  background: white;
 }
 
 .card-icon {
@@ -62,9 +92,11 @@ body p {
 }
 
 .grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    /* display: flex;
+    flex-direction: column; */
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
 }
 
 .link {
@@ -84,7 +116,8 @@ body p {
 .button-container {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0rem;
+  align-self: center !important;
 }
 
 .button-container p {
@@ -98,10 +131,15 @@ body p {
   height: 30px;
   width: 120px;
   background-color: white;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.05);
+  text-decoration: none
 }
 
 .see-more-button:hover {
-  background-color: black;
+  background-color: rgb(43, 43, 43);
+  color: white;
+}
+.see-more-button:hover p {
   color: white;
 }
 
@@ -111,18 +149,33 @@ body p {
   display: flex;
   gap: 1rem;
   padding-bottom: 5rem;
+  justify-self: start;
 }
 
 .icon-email {
   color: #FF6B5C; /* Gmail red */
+  transform: scale(1.5);
 }
 
 .icon-linkedin {
   color: #0077B5; /* LinkedIn blue */
+  transform: scale(1.5);
 }
 
 .icon-github {
   color: #333; /* GitHub dark grey */
+  transform: scale(1.3);
+}
+
+.icon-link {
+  color: #202020;
+  transform: scale(1.3);
+  align-self: center;
+}
+
+
+.icon-container a i {
+  transform: scale(1);
 }
 
 .icon-container a:hover i {
@@ -133,12 +186,16 @@ body p {
   color: #D44638;
 }
 
+.icon-link:hover {
+  color: #6c6c6c;
+}
+
 .icon-linkedin:hover {
   color: #005582;
 }
 
 .icon-github:hover {
-  color: #6e5494; /* subtle GitHub purple */
+  color: #6e5494; 
 }
 
 
@@ -146,11 +203,11 @@ body p {
 header {
   background-color: #0a0a0a;
   color: white;
-  padding: 2rem 1rem;
+  padding: 2rem 0rem;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  margin-left: -5%;
-  margin-right: -5%;
+  /* margin-left: -5%; */
+  /* margin-right: -5%; */
   margin-top: -3%;
 }
 
@@ -162,22 +219,23 @@ header {
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
-  /* height: 15vw; */
 }
 
 header::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  background: rgba(0, 0, 0, 0.6);
   z-index: -1;
+  overflow-x: hidden !important;
 }
 
 
 
 .header-container {
-  max-width: 900px;
-  margin: 0 auto;
+  /* max-width: 800px; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 header h1 {
@@ -267,6 +325,14 @@ footer .container p {
   header {
     margin-top: -10vw;
   }
+
+  .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+}
 }
 
 @media screen and (max-width: 400px) {
