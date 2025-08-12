@@ -136,11 +136,7 @@ section {
 }
 
 .see-more-button:hover {
-  background-color: rgb(43, 43, 43);
-  color: white;
-}
-.see-more-button:hover p {
-  color: white;
+  background-color:#f9f9f9;
 }
 
 
@@ -335,16 +331,16 @@ footer .container p {
 }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   nav {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 
   }
 
   .wrapper {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 
   .see-more-button {
